@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+
+int main(){
+    
+    setlocale(LC_ALL, "portuguese");
+    /* atividade 03*/
+    float valorA;
+
+    printf("Digite um valor:");
+    scanf("\n %f", &valorA);
+
+    if((valorA == 5) || (valorA == 200) || (valorA == 400)){
+        printf("O valor está no padrão");
+    }
+    else if((valorA >= 500) && (valorA <= 1000)){
+        printf("O valor está no padrão");
+    }
+    else{
+        printf ("O valor não está no padrão");
+    }
+    return 0;
+}

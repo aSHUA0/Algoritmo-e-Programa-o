@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<math.h>
+#include <string.h>
+
+int main(){
+	double codigo;
+	char estado[3], maiorEstado[3], menorEstado [3];
+	int indice,totalIndice , maiorIndice=0, mediaIndice, contadorIndice=0, menorIndice=0;
+	int mediaVeiculos , veiculos, contadorVeiculos=0, totalVeiculos,teste;
+	
+	do{
+		printf("Digite o código da cidade");
+		scanf("%lf", &codigo);
+		fflush(stdin);
+		
+		printf("Digite a abreviação do estado");
+		fgets(estado, 3, stdin);
+		fflush(stdin);
+		
+		printf("Digite o numero de veiculos");
+		scanf("%d", &veiculos);
+		fflush(stdin);
+		
+		printf("Digite o numero de acidentes");
+		scanf("%d", &indice);
+		fflush(stdin);
+		
+		if(maiorIndice < indice){
+			maiorIndice = indice;
+			strcpy(maiorEstado, estado);
+		}
+		if(menorIndice > indice){
+			menorIndice = indice;
+			strcpy(menorEstado, estado);
+		}
+		if(veiculos >= 1){
+			contadorVeiculos++;
+			totalVeiculos += veiculos;
+			
+		}
+		if(indice >= 1){
+			contadorIndice++;
+			totalIndice += indice;
+		}
+		
+		printf("Deseja repetir o formulário?\n 1-Sim\n2-Não");
+		scanf("%d", &teste);
+		
+	}while(teste == 1);
+	mediaVeiculos = totalVeiculos / contadorVeiculos;
+	mediaIndice = totalIndice / contadorIndice;
+	
+	printf("\nO maior indice e de %d, e pertence a %s", maiorIndice, maiorEstado);
+	printf("\nO menor indice e de %d, e pertence a %s", menorIndice, menorEstado);
+	printf("\nO media de veiculos e %d", mediaVeiculos);
+	printf("\nO media de acidentes e %d", mediaIndice);
+}

@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+float conversao(float N1, float N2) {
+
+  float resultado, pi = 3.1414592;
+
+  resultado = pi * pow(N2, 2) * N1;
+  return resultado;
+}
+
+int main() {
+
+  float altura, raio;
+
+  printf("Digite a altura do cilindro:\n");
+  scanf("%f", &altura);
+
+  printf("Digite o raio do cilindro:\n");
+  scanf("%f", &raio);
+
+  printf("O raio do cilindro é: %.2f\n", conversao(altura, raio));
+  return 0;
+}

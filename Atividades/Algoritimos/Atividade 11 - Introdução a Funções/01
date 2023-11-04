@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+  int A, B, maior;
+
+  printf("Digite o primeiro valores:\n");
+  scanf("%d", &A);
+
+  printf("Digite o segundo valores:\n");
+  scanf("%d", &B);
+
+  maior = comparacao(A, B);
+  printf("O maior numero é %d\n", maior);
+}
+
+int comparacao(int N1, int N2) {
+
+  int maior;
+  if (N1 > N2) {
+    maior = N1;
+  } else {
+    maior = N2;
+  }
+
+  return maior;
+}

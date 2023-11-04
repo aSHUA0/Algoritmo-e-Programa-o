@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<math.h>
+
+main(){
+	char sex, olho, cabelo;
+	int idade, porcentagem, contadorMulher = 0, contadorTotal = 0;
+	float salario;
+	
+	do{
+		
+		do{
+			fflush(stdin);
+			printf ("Digite a sexualidade? \n Digite M para masculino e F para feminino:");
+			scanf("%c", &sex);
+			if(sex != 'M' && sex != 'F'){
+				printf("\nOpcao invalida tente novamente");
+			}
+			
+		}while(sex != 'M' && sex != 'F');
+		
+		do{
+			fflush(stdin);
+			printf("Qual é a cor do olho?\n Digite A para azui, V para verde, C para castanho e P para preto:");	
+			scanf("%c", &olho);
+			if(olho != 'A' && olho != 'V' && olho != 'C' && olho != 'P'){
+				printf("\nOpcao invalida tente novamente");
+			}
+		}while(olho != 'A' && olho != 'V' && olho != 'C' && olho != 'P');
+		
+		do{
+			fflush(stdin);
+			printf("Qual é a cor do cabelo?\n Digite L para loiro, C para castanhos, P para preto e R para ruivos:");
+			scanf("%c", &cabelo);
+			if(cabelo != 'L' && cabelo != 'C' && cabelo != 'P' && cabelo != 'R'){
+				printf("\nOpcao invalida tente novamente");
+			}
+		}while(cabelo != 'L' && cabelo != 'C' && cabelo != 'P' && cabelo != 'R');
+		
+		printf("Digite o salario dessa pessoa:");
+		scanf("%f", &salario);
+		
+		do{
+			fflush(stdin);
+			printf("Digite a idade da pessoa:");
+			scanf("%d", &idade);	
+			if(idade < 10 && idade != -1){
+			printf("Idade invalida");
+			}
+		}while(idade < 10 && idade != -1);
+		
+		if(sex == 'F' && idade >= 18 && idade <= 35){
+			contadorMulher++;
+		}
+		contadorTotal ++;
+	}while(idade != -1);	
+	
+	porcentagem = (contadorMulher * 100) / contadorTotal;
+	printf("Possui %d porcento de mulheres entre 18 e 35 anos", porcentagem);
+}

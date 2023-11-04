@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<math.h>
+#include <locale.h>
+
+int main(){
+	setlocale(LC_ALL, "portuguese");
+  int valorA, valorB, valorC;
+
+  printf("Digite três valores distintos positivo\n");
+  scanf("%d", &valorA);
+  scanf("%d", &valorB);
+  scanf("%d", &valorC);
+
+  if((valorA < 1) && (valorB < 1) && (valorC < 1)){
+    printf("Esses valores não são de um triangulo");
+  }
+  //calssificação dos triangulos//
+  if((valorA != valorB) && (valorA != valorC) && (valorC != valorB)){
+    printf("Triângulo Retângulo");
+  }else if((valorA == valorB) && (valorA == valorC) && (valorC == valorB)){
+    printf("Triângulo Acutângulo");
+  }else{
+    printf("Triângulo Obtusângulo");
+  }
+}

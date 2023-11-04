@@ -1,0 +1,46 @@
+#include<stdio.h>
+#include<math.h>
+
+main(){
+	int DDD;
+	
+	printf("Digite o DDD:\n");
+	scanf("%d", &DDD);
+
+	switch(DDD){
+		case 61:
+			printf("É de Brasilia");
+			break;
+		
+		case 71:
+			printf("É de Salvador");
+			break;
+		
+		case 11:
+			printf("É de São Paulo");
+			break;
+		
+		case 21:
+			printf("É de Rio de Janeiro");
+			break;
+		
+		case 32:
+			printf("É de Juiz de Fora");
+			break;
+			
+		case 19:
+			printf("É de Campinas");
+			break;
+			
+		case 27:
+			printf("É de Vitória");
+			break;
+			
+		case 31:
+			printf("É de Belo Horizonte");
+			break;
+		default:
+			printf("Sua cidade não existe");
+			break;
+	}
+}

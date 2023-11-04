@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+#include <locale.h>
+
+int main(){
+	setlocale(LC_ALL, "portuguese");
+  float x1, x2, y1, y2;
+  float subX, subY, soma, raiz;
+
+  printf("Digite o valor de X1 e Y1");
+  scanf("%f", &x1);
+  scanf("%f", &y1);
+
+  printf("Digite o valor de X2 e Y2");
+  scanf("%f", &x2);
+  scanf("%f", &y2);
+
+  subX = x1-x2;
+  subY = y1-y2;
+  subX = pow(subX, 2);
+  subY = pow(subY, 2);
+  soma = subX + subY;
+  raiz = sqrt(soma);
+
+  printf("A distancia é %.4f", raiz);
+}

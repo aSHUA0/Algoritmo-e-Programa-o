@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<math.h>
+
+main(){
+	
+	float valorA, valorB, valorC, valorD, maior, menor;
+	
+	printf("Digite quatro numeros distintos");
+	scanf("%f", &valorA);
+	scanf("%f", &valorB);
+	scanf("%f", &valorC);
+	scanf("%f", &valorD);
+	
+	if ((valorA > valorB) && (valorA > valorC) && (valorA > valorD)){
+		maior = valorA;
+		printf("O maior numero é %.2f", maior);
+	}
+	else if ((valorB > valorA) && (valorB > valorC) && (valorB > valorD)){
+		maior = valorB;
+		printf("O maior numero é %.2f", maior);
+	}
+	else if ((valorC > valorA) && (valorC > valorB) && (valorC > valorD)){
+		maior = valorC;
+		printf("O maior numero é %.2f", maior);
+	}
+	else if ((valorD > valorA) && (valorD > valorB) && (valorD > valorC)){
+		maior = valorD;
+		printf("O maior numero é %.2f", maior);
+		
+	}
+	if ((valorA < valorD) && (valorA < valorB) && (valorA < valorC)){
+		menor=valorA;
+		printf("O menor numero é %.2f", menor);
+		
+	}
+	else if ((valorB < valorD) && (valorB < valorA) && (valorB < valorC)){
+		menor=valorB;
+		printf("O menor numero é %.2f", menor);
+		
+	}
+	else if ((valorC < valorD) && (valorC < valorA) && (valorC < valorB)){
+		menor=valorC;
+		printf("O menor numero é %.2f", menor);
+		
+	}
+	else if ((valorD < valorC) && (valorD < valorA) && (valorD < valorB)){
+		menor=valorD;
+		printf("O menor numero é %.2f", menor);
+	}
+}

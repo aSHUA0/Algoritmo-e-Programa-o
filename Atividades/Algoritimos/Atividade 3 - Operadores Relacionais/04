@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+
+int main(){
+    
+    setlocale(LC_ALL, "portuguese");
+    /* atividade 03*/
+    float peso;
+
+    printf("Digite seu peso:");
+    scanf("\n %f", &peso);
+
+    if(peso >= 60){
+        printf("pesa mais doq 60kg");
+    }else {
+        printf("pesa menos doq 60kg");
+    }
+
+    return 0;
+}

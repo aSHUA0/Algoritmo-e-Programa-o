@@ -1,0 +1,33 @@
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+float calculoSalario(int N1) {
+  float total;
+
+  if (N1 <= 50) {
+    total = 600;
+  } else if (N1 > 50 && N1 <= 80) {
+    total = (N1 - 50) * 0.5 + 600;
+  } else {
+    total = N1 * 0.75 + 600;
+  }
+  return total;
+}
+
+int main() {
+  int quantidade[3];
+  float salarioFinal[3];
+  
+  for (int i = 0; i < 3; i++) {
+    printf("Quantas peças o %dº funcionário produziu?\n", i + 1);
+    scanf("%d", &quantidade[i]);
+  }
+
+  for (int i = 0; i < 3; i++) {
+    salarioFinal[i] = calculoSalario(quantidade[i]);
+  }
+  for (int i = 0; i < 3; i++) {
+    printf("%.2f\n", salarioFinal[i]);
+  }
+}

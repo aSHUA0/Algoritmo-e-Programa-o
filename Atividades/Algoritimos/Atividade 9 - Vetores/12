@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+  int A[5], totalValor=0;
+
+  printf("Digite 5 numeros\n");
+    
+  for(int i = 0; i<5; i++){
+    scanf("%d", &A[i]);
+  }
+  int menorValor = A[0], maiorValor = A[0];
+  
+  for(int i = 0; i<5; i++){
+    totalValor += A[i];
+    if(A[i]>maiorValor){
+      maiorValor = A[i];
+    }else if(A[i] < menorValor){
+      menorValor = A[i];
+    }
+  }
+  int media = totalValor / 5;
+  printf("Maior valor:%d\n", maiorValor);
+  printf("Menor valor:%d\n", menorValor);
+  printf("Media:%d\n", media);
+}

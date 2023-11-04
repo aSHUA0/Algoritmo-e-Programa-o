@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<math.h>
+#include <locale.h>
+
+int main(){
+	setlocale(LC_ALL, "portuguese");
+  int n;
+  double funcao, raiz;
+  
+  
+  printf("Digite um numero positivo");
+  scanf("%d", &n);
+
+  funcao = ((5*n) + 3);
+  n = pow(n,2);
+  raiz = funcao / sqrt(n - 16);
+  n = sqrt(n);
+  printf("A função do %d é %.2f", n, raiz);
+}

@@ -1,0 +1,25 @@
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int promocao(int N1) {
+  int desconto;
+  desconto = N1 / 15;
+  
+  return desconto;
+}
+int main() {
+  int A[500], B[500];
+
+  for (int i = 0; i < 500; i++) {
+    A[i] = rand() % 100 + 1;
+  }
+  
+  for (int i = 0; i < 500; i++){
+    B[i] = promocao(A[i]);
+  }
+
+  for (int i = 0; i < 10; i++){
+    printf("O %dº cliente tem direito a %d filmes\n", i+1, B[i]);
+  }
+}

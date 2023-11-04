@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+float conversao(float N1) {
+
+  float resultado, pi = 3.1414592;
+
+  resultado = 4*pi*pow(N1,3)/3;
+  return resultado;
+}
+
+int main() {
+
+  float raio;
+
+  printf("Digite o raio do cilindro:\n");
+  scanf("%f", &raio);
+
+  printf("O raio do cilindro é: %.2f\n", conversao(raio));
+  return 0;
+}

@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+  int A[11];
+
+  printf("Digite 10 valores inteiros\n");
+  for(int i = 0; i<10; i++){
+    scanf("%d", &A[i]);
+  }
+  for(int i = 0; i<10; i++){
+    if(A[i] % 2 == 0){
+      printf("par: %d\n", A[i]);
+    }
+  }
+}

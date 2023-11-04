@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<math.h>
+
+main(){
+	int codigo, quant;
+	float preco;
+	
+	printf("Digite o codigo do alimento:\n");
+	scanf("%d", &codigo);
+	
+	printf("Digite quantos alimentos voce quer:\n");
+	scanf("%d", &quant);
+
+	switch(codigo){
+		case 100:
+			preco = 10.10 * quant;
+			printf("O valor total ficou: %.2f", preco);
+			break;
+
+		case 101:
+			preco = 8.30 * quant;
+			printf("O valor total ficou: %.2f", preco);
+			break;
+		
+		case 102:
+			preco = 8.50 * quant;
+			printf("O valor total ficou: %.2f", preco);
+			break;
+			
+		case 103:
+			preco = 12.50 * quant;
+			printf("O valor total ficou: %.2f", preco);
+			break;
+			
+		case 104:
+			preco = 13.25 * quant;
+			printf("O valor total ficou: %.2f", preco);
+			break;
+			
+		default:
+			printf("Não existe no cardapio");
+			break;
+	}
+}

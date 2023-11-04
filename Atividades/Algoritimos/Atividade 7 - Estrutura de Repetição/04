@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<math.h>
+
+main(){
+	
+	int numero=1, conta;
+	
+	while(numero <= 5){
+		conta = numero * 5;
+		printf("%d \n", conta);
+		numero++;
+	}
+}

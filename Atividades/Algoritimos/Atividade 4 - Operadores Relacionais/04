@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+
+int main(){
+    
+    setlocale(LC_ALL, "portuguese");
+    /* atividade 03*/
+    float valorA, valorB, valorC, maior, menor, meio;
+
+    printf("Digite três valores distintos:");
+    scanf("\n %f", &valorA);
+    scanf("\n %f", &valorB);
+    scanf("\n %f", &valorC);
+
+    if((valorA > valorB) && (valorA > valorC)){
+        maior = valorA;
+        printf("\n%.2f", maior);
+    }
+    else if((valorB > valorA) && (valorB > valorC)){
+        maior = valorB;
+        printf("\n%.2f", maior);
+    }
+    else if((valorC > valorA) && (valorC > valorB)){
+        maior = valorC;
+        printf("\n%.2f", maior);
+    }
+    if((valorB > valorA) && (valorA > valorC)){
+        meio = valorA;
+        printf("\n%.2f", meio);
+    }
+    else if((valorA > valorB) && (valorB > valorC)){
+        meio = valorB;
+        printf("\n%.2f", meio);
+    }
+    else if((valorA > valorC) && (valorC > valorB)){
+        meio = valorC;
+        printf("\n%.2f", meio);
+    }
+    if((valorA < valorB) && (valorA < valorC)){
+        menor = valorA;
+        printf("\n%.2f", menor);
+    }
+    else if((valorB < valorA) && (valorB < valorC)){
+        menor = valorB;
+        printf("\n%.2f", menor);
+    }
+    else if((valorC < valorA) && (valorC < valorB)){
+        menor = valorC;
+        printf("\n%.2f", menor);
+    }
+    return 0;
+}

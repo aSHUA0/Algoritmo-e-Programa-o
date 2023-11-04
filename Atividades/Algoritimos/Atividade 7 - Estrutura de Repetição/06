@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+	int repetidor, fruta, contador = 0;
+	
+	do{
+		printf("Frutas disponiveis: \n 1|Abacaxi - 5,00\n 2|Maça - 1,00\n 3|Pera - 4,00\n");
+		scanf("%d", &fruta);
+		
+		switch(fruta){
+			case 1:
+				printf("Abacaxi selecionado\n");
+				contador += 5;
+				break;
+			case 2:
+				printf("Maça selecionado\n");
+				contador += 1;
+				break;
+			case 3:
+				printf("Pera selecionado\n");
+				contador += 4;
+				break;
+		}
+		printf("\nDeseja continuar comprando?\n 1: Sim | 2: Não \n");
+		scanf("%d", &repetidor);
+	}while(repetidor != 2);
+	printf("Valor total da compra é %d", contador);
+}

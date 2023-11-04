@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+
+int main(){
+    
+    setlocale(LC_ALL, "portuguese");
+    /* atividade 03*/
+    float valorA, valorB, valorC, maior, menor, meio;
+
+    printf("Digite três valores distintos:");
+    scanf("\n %f", &valorA);
+    scanf("\n %f", &valorB);
+    scanf("\n %f", &valorC);
+
+    if((valorA < valorB) && (valorA < valorC)){
+        menor = valorA;
+        printf("\nO menor valor é %.2f", menor);
+    }
+    else if((valorB < valorA) && (valorB < valorC)){
+        menor = valorB;
+        printf("\nO menor valor é %.2f", menor);
+    }
+    else if((valorC < valorA) && (valorC < valorB)){
+        menor = valorC;
+        printf("\nO menor valor é %.2f", menor);
+    }
+    if((valorB > valorA) && (valorA > valorC)){
+        meio = valorA;
+        printf("\nO valor do meio é %.2f", meio);
+    }
+    else if((valorA > valorB) && (valorB > valorC)){
+        meio = valorB;
+        printf("\nO valor do meio é %.2f", meio);
+    }
+    else if((valorA > valorC) && (valorC > valorB)){
+        meio = valorC;
+        printf("\nO valor do meio é %.2f", meio);
+    }
+    if((valorA > valorB) && (valorA > valorC)){
+        maior = valorA;
+        printf("\nO maior valor é %.2f", maior);
+    }
+    else if((valorB > valorA) && (valorB > valorC)){
+        maior = valorB;
+        printf("\nO maior valor é %.2f", maior);
+    }
+    else if((valorC > valorA) && (valorC > valorB)){
+        maior = valorC;
+        printf("\nO maior valor é %.2f", maior);
+    }
+    return 0;
+}

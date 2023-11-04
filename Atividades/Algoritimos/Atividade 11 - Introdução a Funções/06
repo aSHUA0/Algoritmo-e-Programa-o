@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+float conversao(float N1, float N2) {
+
+  float resultado;
+
+  resultado = N1 / pow(N2,2);
+  return resultado;
+}
+
+int main() {
+
+  float peso, altura;
+
+  printf("Digite o seu peso em quilos:\n");
+  scanf("%f", &peso);
+  
+  printf("Digite a sua altura em metros:\n");
+  scanf("%f", &altura);
+
+  printf("O seu IMC é: %.2f\n", conversao(peso, altura));
+  return 0;
+}

@@ -1,0 +1,65 @@
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+float opcao1(float N1) {
+
+  float resultado;
+
+  resultado = N1 * 10 / 100;
+  resultado = N1 - resultado;
+  return resultado;
+}
+
+float opcao2(float N1) {
+  float resultado;
+  resultado = N1 / 2;
+
+  return resultado;
+}
+
+float opcao3(float N1, float N2) {
+  float resultado;
+
+  resultado = N1 * 3 / 100;
+  resultado = resultado * N2 + N1;
+  return resultado;
+}
+
+int main() {
+  float valor;
+  int opcao;
+
+  printf("Digite o valor da compra:");
+  scanf("%f", &valor);
+
+  printf("Opções de pagamento:\n1 - A vista com 10 porcento de desconto\n2 - "
+         "Em duas vezes (preço da etiqueta)\n3 - De 3 até 10 vezes com 3 porcento de "
+         "juros ao mês sobre o valor de cada prestação (somente para compras "
+         "acima de R$ 100,00\n).");
+  scanf("%d", &opcao);
+
+  if (opcao == 1) {
+    printf("O valor vai ficar em %.2f", opcao1(valor));
+  } else if (opcao == 2) {
+    printf("O valor vai ficar em duas parcelas de %.2f sem juros",
+           opcao2(valor));
+  } else if (opcao == 3) {
+    float parcelas, resultado;
+    printf("Deseja dividir em quantas parcelas?\n");
+    scanf("%f", &parcelas);
+
+    if (parcelas >= 3 && parcelas <= 10) {
+      resultado = valor / parcelas;
+      printf("O valor vai ficar em %.0f parcelas de %.2f com juros\n No total "
+             "vai ter que pagar %.2f",
+             parcelas, resultado, opcao3(valor, parcelas));
+    } else {
+      printf("Opção inválida");
+    }
+  } else {
+    printf("Opção inválida");
+  }
+
+  return 0;
+}

@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>
+
+main(){
+	int numero, resultado;
+	
+	printf("Digite um número:");
+	scanf("%d", &numero);
+	
+	resultado = (numero % 2);
+	
+	if(resultado == 0){
+		printf("é par mano");
+	}else{
+		printf("é impar mano");
+	}
+}

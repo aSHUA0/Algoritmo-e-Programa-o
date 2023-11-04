@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+  int A[11], posicao;
+
+  printf("Digite 10 valores inteiros\n");
+  for(int i = 0; i<10; i++){
+    scanf("%d", &A[i]);
+  }
+  
+  int valorMaior = A[0];
+  
+  for(int i = 0; i<10; i++){
+    if(A[i] > valorMaior){
+      valorMaior = A[i];
+      posicao = i;
+    }
+  }
+  printf("Maior valor:%d\nNa posição:%d", valorMaior, posicao);
+}

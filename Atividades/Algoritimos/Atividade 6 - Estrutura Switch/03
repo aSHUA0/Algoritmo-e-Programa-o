@@ -1,0 +1,92 @@
+#include<stdio.h>
+#include<math.h>
+
+main(){
+	int prato, sobremesa, bebida, cal=0;
+
+	printf("Digite o numero do prato:\n");
+	scanf("%d", &prato);
+	
+	printf("Digite o numero da sobremesa:\n");
+	scanf("%d", &sobremesa);
+
+	printf("Digite o numero da bebida:\n");
+	scanf("%d", &bebida);
+	
+	switch(prato){
+		case 1:
+			cal += 180;
+			printf("Voce escolheu o prato vegetariano\n");
+			break;
+
+		case 2:
+			cal += 230;
+			printf("Voce escolheu o peixe\n");
+			break;
+		
+		case 3:
+			cal += 250;
+			printf("Voce escolheu o frango\n");
+			break;
+			
+		case 4:
+			cal += 350;
+			printf("Voce escolheu a carne\n");
+			break;
+			
+		default:
+			printf("Não existe nas opções\n");
+			break;
+	}
+	switch(sobremesa){
+		case 1:
+			cal += 75;
+			printf("Voce escolheu o abacaxi\n");
+			break;
+
+		case 2:
+			cal += 110;
+			printf("Voce escolheu o sorvete diet\n");
+			break;
+		
+		case 3:
+			cal += 170;
+			printf("Voce escolheu o mouse diet\n");
+			break;
+			
+		case 4:
+			cal += 200;
+			printf("Voce escolheu o mouse chocolate\n");
+			break;
+			
+		default:
+			printf("Não existe nas opções\n");
+			break;
+			
+	}switch(bebida){
+		case 1:
+			cal += 20;
+			printf("Voce escolheu o chá\n");
+			break;
+
+		case 2:
+			cal += 70;
+			printf("Voce escolheu o suco de laranja\n");
+			break;
+		
+		case 3:
+			cal +=100;
+			printf("Voce escolheu o suco de melão\n");
+			break;
+			
+		case 4:
+			cal+=65;
+			printf("Voce escolheu o refrigerante diet\n");
+			break;
+			
+		default:
+			printf("Não existe nas opções\n");
+			break;
+	}
+	printf("O total de calorias ingeridas vai ser: %d", cal);
+}

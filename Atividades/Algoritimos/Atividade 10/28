@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+  int V[10], v1[10], v2[10];
+  int num1 = 0, num2 = 0;
+
+  printf("Digite 10 números inteiros::\n");
+
+  for (int i = 0; i < 10; i++) {
+    scanf("%d", &V[i]);
+  }
+
+  for (int i = 0; i < 10; i++) {
+    if (V[i] % 2 == 0) {
+      v2[num2] = V[i];
+      num2++;
+    } else {
+      v1[num1] = V[i];
+      num1++;
+    }
+  }
+
+  printf("Numeros pares:\n");
+  for (int i = 0; i < num2; i++) {
+    printf("%d\n", v2[i]);
+  }
+
+  printf("Numeros impares:");
+  for (int i = 0; i < num1; i++) {
+    printf("%d\n", v1[i]);
+  }
+}

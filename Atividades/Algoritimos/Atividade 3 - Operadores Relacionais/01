@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+
+int main(){
+    
+    setlocale(LC_ALL, "portuguese");
+    /* atividade 03*/
+    int idade;
+
+    printf("Digite sua idade:");
+    scanf("\n %d", &idade);
+
+    if(idade >= 18){
+        printf("maior de idade");
+    }else {
+        printf("menor de idade");
+    }
+
+    return 0;
+}

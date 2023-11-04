@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+  int A[11], valorMaior = 0;
+
+  printf("Digite 10 valores inteiros\n");
+  for(int i = 0; i<10; i++){
+    scanf("%d", &A[i]);
+  }
+  
+  int valorMenor = A[0];
+  
+  for(int i = 0; i<10; i++){
+    if(A[i] > valorMaior){
+      valorMaior = A[i];
+    }else if(A[i] < valorMenor){
+      valorMenor = A[i];
+    }
+  }
+  printf("Maior valor:%d", valorMaior);
+  printf("Menor valor:%d", valorMenor);
+}

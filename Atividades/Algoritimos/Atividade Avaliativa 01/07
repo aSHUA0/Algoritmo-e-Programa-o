@@ -1,0 +1,45 @@
+#include <locale.h>
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  setlocale(LC_ALL, "portuguese");
+  char nome[30];
+  float n1, n2, n3, mp, mediaTurma = 0, aluno = 0;
+  int x;
+
+  do {
+    fflush(stdin);
+    printf("Digite o seu nome\n");
+    fgets(nome, 30, stdin);
+    fflush(stdin);
+
+    printf("Digite a sua nota 1\n");
+    scanf("%f", &n1);
+    fflush(stdin);
+
+    printf("Digite a sua nota 2\n");
+    scanf("%f", &n2);
+    fflush(stdin);
+
+    printf("Digite a sua nota 3\n");
+    scanf("%f", &n3);
+    fflush(stdin);
+
+    mp = (n1 * 2) + (n2 * 4) + (n3 * 3);
+    mp = mp / 10;
+    if (mp >= 7) {
+      printf("%s está aprovado", nome);
+    } else {
+      printf("%s está reprovado", nome);
+    }
+    printf("\nDigite 1 para repetir ou 2 para finalizar");
+    scanf("%d", &x);
+    fflush(stdin);
+
+    mediaTurma += mp;
+    aluno++;
+  } while (x == 1);
+  mediaTurma = mediaTurma / aluno;
+  printf("\nA média da turma é %.2f", mediaTurma);
+}

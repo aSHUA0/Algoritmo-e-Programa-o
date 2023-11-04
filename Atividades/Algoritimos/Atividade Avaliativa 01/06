@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<math.h>
+#include <locale.h>
+
+int main(){
+	setlocale(LC_ALL, "portuguese");
+  float x, y;
+
+  printf("Digite o valor de X e de Y\n");
+  scanf("%f", &x);
+  scanf("%f", &y);
+  
+  //ponto em nenhum quadrante//
+  
+  if(x == y && y == 0){
+    printf("Origem");
+  }else if(x == 0){
+    printf("Eixo X");
+  }else if(y == 0){
+    printf("Eixo Y");
+  }
+  
+  //ponto dentro do quadrante//
+
+  if(x > 0 && y > 0){
+    printf("Primeiro Quadrante");
+  }else if(x < 0 && y > 0){
+    printf("Segundo Quadrante");
+  }else if(x < 0 && y < 0){
+    printf("Terceiro Quadrante");
+  }else if(x > 0 && y < 0){
+    printf("Quarto Quadrante");
+  }
+}

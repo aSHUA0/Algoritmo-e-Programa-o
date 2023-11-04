@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+
+int main(){
+    
+    setlocale(LC_ALL, "portuguese");
+    /* atividade 03*/
+    float altura;
+
+    printf("Digite sua altura:");
+    scanf("\n %f", &altura);
+
+    if(altura >= 180){
+        printf("altão em meu cria");
+    }else {
+        printf("baixinho, toma fermento que cresce");
+    }
+
+    return 0;
+}

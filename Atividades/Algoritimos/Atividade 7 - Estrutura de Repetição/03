@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+
+main(){
+	int numb, impar, res = 0;
+	
+	printf("Digite um numero aleatório");
+	scanf("%d", &numb);
+	
+	while(impar <= numb){
+		printf("%d \n", impar);
+		impar = (res * 2) + 1;
+		res++;
+	}
+}

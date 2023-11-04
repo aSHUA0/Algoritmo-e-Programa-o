@@ -1,0 +1,50 @@
+#include <locale.h>
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  setlocale(LC_ALL, "portuguese");
+  float salario, salarioTotal = 0, mediaSalario, maiorSalario = 0, mediaFilhos;
+  int filhos, totalFilhos;
+  int x, habitantes = 0;
+  float percentual;
+  
+  do{
+    printf("Digite o seu salario");
+    scanf("%f", &salario);
+
+    printf("\nQuantos filhos possui?");
+    scanf("%d", &filhos);
+    
+    //soma total das variaveis//
+    
+    if(salario > 0 && filhos >= 0){
+    salarioTotal += salario;
+    totalFilhos += filhos;
+    }
+
+    //maior salario//
+    
+    if(salario > maiorSalario){
+      maiorSalario = salario;
+    }
+
+    if(salario <= 100){
+      percentual++;
+    }
+    
+    printf("\nDeseja repetir o formulário?\nSim - 1\n2 - Não");
+    scanf("%d", &x);
+    
+    habitantes++;
+  }while(x == 2);
+  mediaSalario = salarioTotal / habitantes;
+  mediaFilhos = totalFilhos / habitantes;
+  percentual = (percentual * 100) / habitantes;
+
+  printf("Média salarial é %.2f", mediaSalario);
+  printf("Média de filhos é %.2f", mediaFilhos);
+  printf("O maior salario é %.2f", maiorSalario);
+  printf("Média salarial é %.2f", maiorSalario);
+  printf("O percentual de pessoas que recebem até R$100 é %.2f", percentual);
+}

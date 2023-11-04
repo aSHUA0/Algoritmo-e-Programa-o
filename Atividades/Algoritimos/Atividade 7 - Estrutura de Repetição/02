@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <math.h>
+
+main(){
+	int numb, res = 0;
+	
+	printf("Digite um numero aleatório");
+	scanf("%d", &numb);
+	
+	while(numb >= res){
+		printf("%d \n", numb);
+		numb--;
+	}
+}

@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+  int A[7];
+
+  printf("Digite 6 números inteiros:\n");
+  for(int i=0; i < 6; i++){
+    scanf("%d", &A[i]);
+  }
+  for(int i=0; i < 6; i++){
+    printf("Os valores digitados foram:%d\n", A[i]);
+  }
+}

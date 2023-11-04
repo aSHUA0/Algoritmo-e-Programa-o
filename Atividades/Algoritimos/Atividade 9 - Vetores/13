@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+  int A[5], maiorPosicao, menorPosicao;
+
+  printf("Digite 5 numeros\n");
+    
+  for(int i = 0; i<5; i++){
+    scanf("%d", &A[i]);
+  }
+  int menorValor = A[0], maiorValor = A[0];
+  
+  for(int i = 0; i<5; i++){
+    if(A[i]>maiorValor){
+      maiorValor = A[i];
+      maiorPosicao = i;
+    }else if(A[i] < menorValor){
+      menorValor = A[i];
+      menorPosicao = i;
+    }
+  }
+  printf("Maior valor: %d\nNa posição: %d\n", maiorValor, maiorPosicao);
+  printf("Menor valor: %d\nNa posição: %d", menorValor, menorPosicao);
+}
