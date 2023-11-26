@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+  int A = 10, B = 20;
+  int *p1, *p2;
+
+  p1 = &A;
+  p2 = &B;
+  printf("%p\n", p1);
+  printf("%p\n", p2);
+  printf("%d\n", *p1);
+  printf("%d\n", *p2);
+
+  if (p1 > p2){
+    printf("O maior endereço tem o valor: %d", *p1);
+  }else{
+    printf("O maior endereço tem o valor: %d", *p2);
+  }
+}
