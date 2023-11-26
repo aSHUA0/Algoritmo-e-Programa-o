@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+  int inteiro = 19;
+  float real = 3.14;
+  char texto[20] = "Alguma coisa";
+
+  printf("%d\n", inteiro);
+  printf("%.2f\n", real);
+  printf("%s\n", texto);
+
+  int *pinteiro;
+  float *preal;
+  char *ptexto;
+  
+  
+  pinteiro = &inteiro;
+  preal = &real;
+  ptexto = &texto;
+
+  *pinteiro = 30;
+  *preal = 6.28;
+  *ptexto = "Coisa alguma";
+  
+  printf("%d\n", inteiro);
+  printf("%.2f\n", real);
+  printf("%s\n", texto);
+}
