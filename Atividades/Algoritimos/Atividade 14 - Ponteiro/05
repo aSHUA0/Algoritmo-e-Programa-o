@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void trocaValores(int *a, int *b){
+  if (*b > *a){
+    int c = *b;
+    *b = *a;
+    *a = c;
+  }
+  printf("Valor de A: %d\n", *a);
+  printf("Valor de B: %d\n", *b);
+  return;
+}
+int main(){
+  int A = 10, B = 20;
+  int *p1, *p2;
+
+  p1 = &A;
+  p2 = &B;
+  printf("Valor de A: %d\n", *p1);
+  printf("Valor de B: %d\n", *p2);
+
+  trocaValores(p1, p2);
+}
