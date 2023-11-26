@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+  float A[10];
+  float *p1[10];
+
+  for (int i = 0; i<10; i++){
+    A[i] = i;
+    p1[i] = &A[i];
+    printf("A[%d] = %p\n", i, p1[i]);
+  }
+}
