@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+  int A = 10, B = 20;
+  int *p1, *p2;
+
+  p1 = &A;
+  p2 = &B;
+  printf("%d\n", p1);
+  printf("%d\n", p2);
+
+  if (p1 > p2){
+    printf("Endereço de A é maior");
+  }else{
+    printf("Endereço de B é maior");
+  }
+}
