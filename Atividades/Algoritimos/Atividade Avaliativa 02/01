@@ -1,6 +1,25 @@
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+
+typedef struct Funcionario {
+  int quantidade;
+  float salarioFinal;
+  int id;
+  struct Funcionario *proximo;
+} Funcionario;
+
+Funcionario *criarLista() { return NULL; }
+
+Funcionario *criarPessoa() {
+  Funcionario *novoFuncionario = (Funcionario *)malloc(sizeof(Funcionario));
+  if (novoFuncionario == NULL) {
+    printf("Erro de alocacao de memoria");
+    exit(EXIT_FAILURE);
+  }
+  novoFuncionario->proximo = NULL;
+  return novoFuncionario;
+}
 
 float calculoSalario(int N1) {
   float total;
@@ -15,19 +34,67 @@ float calculoSalario(int N1) {
   return total;
 }
 
-int main() {
-  int quantidade[3];
-  float salarioFinal[3];
-  
-  for (int i = 0; i < 3; i++) {
-    printf("Quantas peças o %dº funcionário produziu?\n", i + 1);
-    scanf("%d", &quantidade[i]);
-  }
+Funcionario *cadastrar(Funcionario *lista) {
+  srand(time(NULL));
+  Funcionario *novoFuncionario = criarPessoa();
+  novoFuncionario->id = rand() % 100;
+  printf("Digite o numero de peças feitas: ");
+  scanf("%d", &novoFuncionario->quantidade);
+  novoFuncionario->salarioFinal = 0;
+  novoFuncionario->salarioFinal = calculoSalario(novoFuncionario->quantidade);
 
-  for (int i = 0; i < 3; i++) {
-    salarioFinal[i] = calculoSalario(quantidade[i]);
+  if (lista == NULL) {
+    return novoFuncionario;
+  } else {
+    Funcionario *atual = lista;
+    while (atual->proximo != NULL) {
+      atual = atual->proximo;
+    }
+    atual->proximo = novoFuncionario;
+    return lista;
   }
-  for (int i = 0; i < 3; i++) {
-    printf("%.2f\n", salarioFinal[i]);
+}
+void mostrarLista(Funcionario *lista) {
+  Funcionario *atual = lista;
+  if (lista == NULL) {
+    printf("\nLista nula\n");
+    return;
+  } else {
+    while (atual != NULL) {
+      printf("\nQuantidade de peças: %d", atual->quantidade);
+      printf("\nSalario Final: %.2f", atual->salarioFinal);
+      printf("\nID: %d\n", atual->id);
+      atual = atual->proximo;
+    }
   }
+}
+void liberarLista(Funcionario *lista) {
+  Funcionario *atual = lista;
+  Funcionario *proximo;
+  while (atual != NULL) {
+    proximo = atual->proximo;
+    free(atual);
+    atual = proximo;
+  }
+}
+
+int main() {
+  int opcao;
+  Funcionario *lista = criarLista();
+  do {
+    printf("Digite 1 para cadstrar novo funcionário\n");
+    printf("Digite 2 para mostrar funcionários cadstrados\n");
+    printf("Digite 0 para sair\n");
+    scanf("%d", &opcao);
+    if (opcao == 1) {
+      lista = cadastrar(lista);
+    } else if (opcao == 2) {
+      mostrarLista(lista);
+    } else if (opcao != 1 && opcao != 2 && opcao != 0){
+      printf("Opção invalida");
+    }
+  } while (opcao != 0);
+
+  liberarLista(lista);
+  return 0;
 }
