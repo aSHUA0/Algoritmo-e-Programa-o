@@ -1,0 +1,121 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
+typedef struct Assalariado {
+  char genero[2];
+  float salario;
+  char classificacao[20];
+  struct Assalariado *proximo;
+} Assalariado;
+
+Assalariado *criarLista() { return NULL; }
+
+Assalariado *criarPessoa() {
+  Assalariado *novoAssalariado = (Assalariado *)malloc(sizeof(Assalariado));
+  if (novoAssalariado == NULL) {
+    printf("Erro de alocacao de memoria");
+    exit(EXIT_FAILURE);
+  }
+  novoAssalariado->proximo = NULL;
+  return novoAssalariado;
+}
+
+Assalariado *cadastrar(Assalariado *lista) {
+  srand(time(NULL));
+  Assalariado *novoAssalariado = criarPessoa();
+  fflush(stdin);
+  printf("Digite o seu genero:\nM - Masculino\nF - Feminino\n");
+  fgets(novoAssalariado->genero, 2, stdin);
+  fflush(stdin);
+  printf("Digite o seu salario:\n");
+  scanf("%f", &novoAssalariado->salario);
+  if (novoAssalariado->salario < 1) {
+    strcpy(novoAssalariado->classificacao, "Invalido");
+  } else if (novoAssalariado->salario > 1 && novoAssalariado->salario < 1400) {
+    strcpy(novoAssalariado->classificacao, "Abaixo");
+  } else if (novoAssalariado->salario > 1400) {
+    strcpy(novoAssalariado->classificacao, "Acima");
+  }
+
+  if (lista == NULL) {
+    return novoAssalariado;
+  } else {
+    Assalariado *atual = lista;
+    while (atual->proximo != NULL) {
+      atual = atual->proximo;
+    }
+    atual->proximo = novoAssalariado;
+    return lista;
+  }
+}
+void mostrarLista(Assalariado *lista) {
+  Assalariado *atual = lista;
+  if (lista == NULL) {
+    printf("\nLista nula\n");
+    return;
+  } else {
+    while (atual != NULL) {
+      if (strcmp(atual->genero, "M") == 0) {
+        printf("Masculino\n");
+      }if(strcmp(atual->genero, "F")){
+        printf("Feminino\n");
+      }
+      printf("\nSalario: %.2f", atual->salario);
+      printf("\nID: %s\n", atual->classificacao);
+      atual = atual->proximo;
+    }
+  }
+}
+Assalariado *contadorAssalariado(Assalariado *lista) {
+  Assalariado *atual = lista;
+  int contadorAbaixo=0;
+  int contadorAcima=0;
+  while (atual != NULL) {
+    if (atual->salario > 1 && atual->salario < 1400) {
+      contadorAbaixo++;
+      return atual;
+    }else if(atual->salario > 1400){
+      contadorAcima++;
+      return atual;
+    }
+    atual = atual->proximo;
+  }
+  printf("%d de pessoas abaixo do salario minimo\n", contadorAbaixo);
+  printf("%d de pessoas acima do salario minimo\n", contadorAcima);
+  return NULL;
+}
+void liberarLista(Assalariado *lista) {
+  Assalariado *atual = lista;
+  Assalariado *proximo;
+  while (atual != NULL) {
+    proximo = atual->proximo;
+    free(atual);
+    atual = proximo;
+  }
+}
+
+int main() {
+  int opcao;
+  Assalariado *lista = criarLista();
+  do {
+    fflush(stdin);
+    printf("Digite 1 para cadstrar uma nova pessoa\n");
+    printf("Digite 2 para mostrar as pessoas cadastradas\n");
+    printf("Digite 0 para sair\n");
+    scanf("%d", &opcao);
+    fflush(stdin);
+    if (opcao == 1) {
+      lista = cadastrar(lista);
+    } else if (opcao == 2) {
+      mostrarLista(lista);
+    } else if (opcao != 1 && opcao != 2 && opcao != 0) {
+      printf("Opção invalida");
+    }
+  } while (opcao != 0);
+  contadorAssalariado(lista);
+
+  liberarLista(lista);
+  return 0;
+}
